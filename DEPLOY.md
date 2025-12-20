@@ -50,11 +50,26 @@ Bu layihə GitHub Pages üçün hazırlanıb. Deploy etmək üçün aşağıdak�
 ## Əhəmiyyətli Qeydlər
 
 ### Base Path
-- `vite.config.ts`-də base path `/zuma-night-club/` olaraq təyin edilib
-- Əgər repository adınız fərqlidirsə, `vite.config.ts`-də dəyişdirin:
+- **Vercel:** Base path `/` (default - environment variable təyin etməyə ehtiyac yoxdur)
+- **GitHub Pages:** Base path `/zuma-night-club/` (repository adına görə)
+- Environment variable ilə idarə olunur:
+  - Vercel: `VITE_BASE_PATH=/` (default, təyin etməyə ehtiyac yoxdur)
+  - GitHub Pages: `VITE_BASE_PATH=/zuma-night-club/` (və ya default olaraq production-da istifadə edilir)
+  
+Əgər repository adınız fərqlidirsə, `vite.config.ts`-də dəyişdirin və ya environment variable təyin edin:
   ```typescript
-  base: mode === "production" ? "/your-repo-name/" : "/",
+  // vite.config.ts
+  const basePath = process.env.VITE_BASE_PATH || "/your-repo-name/";
   ```
+
+## Vercel Troubleshooting
+
+### Problem: 404 error - JavaScript və CSS faylları tapılmır
+**Həll:**
+- `vercel.json` faylı yaradıldı və `rewrites` konfiqurasiyası əlavə edildi
+- Vercel-də base path `/` olmalıdır (default)
+- Environment variable `VITE_BASE_PATH` təyin etməyin (default `/` istifadə edilir)
+- Vercel-də yenidən deploy edin
 
 ### Repository Adı
 - Hazırda: `zuma-night-club`
