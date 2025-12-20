@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 260 20% 5%;
+    --foreground: 0 0% 98%;
+
+    --card: 260 20% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 260 20% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 300 90% 60%;
+    --primary-foreground: 260 20% 5%;
+
+    --secondary: 220 100% 60%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 260 15% 15%;
+    --muted-foreground: 260 10% 60%;
+
+    --accent: 330 100% 65%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 260 20% 15%;
+    --input: 260 20% 15%;
+    --ring: 300 90% 60%;
+
+    --radius: 0.75rem;
+
+    /* Custom nightclub colors */
+    --neon-purple: 300 90% 60%;
+    --neon-pink: 330 100% 65%;
+    --neon-blue: 220 100% 60%;
+    --neon-cyan: 180 100% 50%;
+
+    /* Gradients */
+    --gradient-neon: linear-gradient(135deg, hsl(var(--neon-purple)), hsl(var(--neon-pink)));
+    --gradient-blue: linear-gradient(135deg, hsl(var(--neon-blue)), hsl(var(--neon-cyan)));
+    --gradient-dark: linear-gradient(180deg, hsl(260 20% 3%), hsl(260 20% 8%));
+
+    /* Shadows */
+    --glow-purple: 0 0 30px hsl(var(--neon-purple) / 0.5);
+    --glow-pink: 0 0 30px hsl(var(--neon-pink) / 0.5);
+    --glow-blue: 0 0 30px hsl(var(--neon-blue) / 0.5);
+  }
+
+  .dark {
+    --background: 260 20% 5%;
+    --foreground: 0 0% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.05em;
+  }
+}
+
+@layer components {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-neon);
+  }
+
+  .text-gradient-blue {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-blue);
+  }
+
+  .glow-purple {
+    box-shadow: var(--glow-purple);
+  }
+
+  .glow-pink {
+    box-shadow: var(--glow-pink);
+  }
+
+  .glow-blue {
+    box-shadow: var(--glow-blue);
+  }
+
+  .glass {
+    @apply bg-card/30 backdrop-blur-xl border border-border/30;
+  }
+
+  .neon-border {
+    @apply relative;
+  }
+
+  .neon-border::before {
+    content: '';
+    @apply absolute inset-0 rounded-lg opacity-50;
+    background: var(--gradient-neon);
+    filter: blur(20px);
+    z-index: -1;
+  }
+}
+
+@layer utilities {
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px hsl(var(--neon-purple) / 0.4),
+                0 0 40px hsl(var(--neon-purple) / 0.2);
+  }
+  to {
+    box-shadow: 0 0 30px hsl(var(--neon-purple) / 0.6),
+                0 0 60px hsl(var(--neon-purple) / 0.3);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
