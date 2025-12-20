@@ -21,7 +21,7 @@ const Index = () => {
         <link rel="canonical" href="https://zumanightclub.com" />
       </Helmet>
       
-      <main className="min-h-screen bg-background">
+      <main className="min-h-screen bg-background" style={{ backgroundColor: 'hsl(var(--background))' }}>
         <HeroSection />
         <ReservationSection />
         <ContactSection />
