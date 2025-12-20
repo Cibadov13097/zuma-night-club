@@ -62,7 +62,34 @@ This project is built with:
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+### GitHub Pages Deployment
+
+This project is configured for GitHub Pages deployment. You can deploy in two ways:
+
+#### Option 1: Automatic Deployment (Recommended)
+1. Push your code to the `main` branch
+2. GitHub Actions will automatically build and deploy to GitHub Pages
+3. Your site will be available at: `https://cibadov13097.github.io/zuma-night-club/`
+
+#### Option 2: Manual Deployment
+```sh
+# Build the project
+npm run build
+
+# Deploy to GitHub Pages
+npm run deploy
+```
+
+**Note:** Make sure you have:
+- `gh-pages` package installed (already in devDependencies)
+- GitHub Pages enabled in your repository settings
+- Repository set to public (or GitHub Pro account for private repos)
+
+### Repository Settings
+1. Go to your repository on GitHub
+2. Navigate to Settings > Pages
+3. Set Source to "GitHub Actions" (for automatic deployment) or "gh-pages branch" (for manual deployment)
+4. Your site will be live at: `https://cibadov13097.github.io/zuma-night-club/`
 
 ## Can I connect a custom domain to my Lovable project?
 
