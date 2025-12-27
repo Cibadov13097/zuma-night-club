@@ -6,15 +6,17 @@ import { componentTagger } from "lovable-tagger";
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   // Determine base path based on deployment platform
-  // Vercel uses "/", GitHub Pages uses "/zuma-night-club/"
+  // Vercel/Netlify uses "/", GitHub Pages uses "/zuma-night-club/"
   // Vercel automatically sets VERCEL=1 environment variable
+  // Netlify sets NETLIFY=1 environment variable
   const isVercel = process.env.VERCEL === "1";
+  const isNetlify = process.env.NETLIFY === "1" || process.env.NETLIFY === "true";
   
-  // Priority: VITE_BASE_PATH env var > Vercel check > production default
+  // Priority: VITE_BASE_PATH env var > Platform check > production default
   let basePath = process.env.VITE_BASE_PATH;
   
   if (!basePath) {
-    if (isVercel) {
+    if (isVercel || isNetlify) {
       basePath = "/";
     } else if (mode === "production") {
       basePath = "/zuma-night-club/";
