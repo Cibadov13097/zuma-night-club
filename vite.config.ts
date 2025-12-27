@@ -9,8 +9,24 @@ export default defineConfig(({ mode }) => {
   // Vercel uses "/", GitHub Pages uses "/zuma-night-club/"
   // Vercel automatically sets VERCEL=1 environment variable
   const isVercel = process.env.VERCEL === "1";
-  const basePath = process.env.VITE_BASE_PATH || 
-    (isVercel ? "/" : (mode === "production" ? "/zuma-night-club/" : "/"));
+  
+  // Priority: VITE_BASE_PATH env var > Vercel check > production default
+  let basePath = process.env.VITE_BASE_PATH;
+  
+  if (!basePath) {
+    if (isVercel) {
+      basePath = "/";
+    } else if (mode === "production") {
+      basePath = "/zuma-night-club/";
+    } else {
+      basePath = "/";
+    }
+  }
+  
+  // Ensure base path ends with /
+  if (!basePath.endsWith("/")) {
+    basePath = basePath + "/";
+  }
   
   return {
     base: basePath,
@@ -18,7 +34,24 @@ export default defineConfig(({ mode }) => {
       host: "::",
       port: 8080,
     },
-    plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
+    plugins: [
+      react(),
+      mode === "development" && componentTagger(),
+      // HTML transform plugin to add base tag
+      {
+        name: "html-transform",
+        transformIndexHtml(html) {
+          // Only add base tag in production for GitHub Pages
+          if (mode === "production" && basePath !== "/") {
+            return html.replace(
+              "<head>",
+              `<head>\n    <base href="${basePath}">`
+            );
+          }
+          return html;
+        },
+      },
+    ].filter(Boolean),
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "./src"),
