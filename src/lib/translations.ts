@@ -24,9 +24,11 @@ export const translations = {
       googleMaps: 'Google Maps-də aç',
       waze: 'Waze-də aç',
       bolt: 'Bolt-da aç',
+      instagram: 'Instagram',
     },
     footer: {
       copyright: 'Bütün Hüquqlar Qorunur',
+      followUs: 'Bizi izləyin',
     },
     meta: {
       title: 'Zuma Night Club - Premium Gecə Həyatı Təcrübəsi',
@@ -57,9 +59,11 @@ export const translations = {
       googleMaps: 'Open in Google Maps',
       waze: 'Open in Waze',
       bolt: 'Open in Bolt',
+      instagram: 'Instagram',
     },
     footer: {
       copyright: 'All Rights Reserved',
+      followUs: 'Follow Us',
     },
     meta: {
       title: 'Zuma Night Club - Premium Nightlife Experience',

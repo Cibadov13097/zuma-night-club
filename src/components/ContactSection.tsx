@@ -1,34 +1,40 @@
 import { motion } from "framer-motion";
-import { Phone, MapPin } from "lucide-react";
+import { Phone, MapPin, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import wazeLogo from "@/assets/waze_app_icon-logo_brandlogos.net_l82da.png";
+import boltLogo from "@/assets/Bolt_logo.svg.png";
 
-// Waze Logo SVG - Waze icon with brand colors
+// Waze Logo Component - Using real logo image
 const WazeLogo = ({ className }: { className?: string }) => (
-  <svg viewBox="0 0 24 24" className={className} xmlns="http://www.w3.org/2000/svg">
-    <circle cx="12" cy="12" r="10" fill="#33CCFF"/>
-    <circle cx="9" cy="9" r="1.5" fill="white"/>
-    <circle cx="15" cy="9" r="1.5" fill="white"/>
-    <path d="M8 14c0 2 1.5 3 4 3s4-1 4-3" stroke="white" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
-  </svg>
+  <img 
+    src={wazeLogo} 
+    alt="Waze" 
+    className={className}
+    style={{ objectFit: 'contain' }}
+  />
 );
 
-// Bolt Logo SVG - Lightning bolt with brand color
+// Bolt Logo Component - Using real logo image
 const BoltLogo = ({ className }: { className?: string }) => (
-  <svg viewBox="0 0 24 24" className={className} xmlns="http://www.w3.org/2000/svg">
-    <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" fill="#FFD700"/>
-  </svg>
+  <img 
+    src={boltLogo} 
+    alt="Bolt" 
+    className={className}
+    style={{ objectFit: 'contain' }}
+  />
 );
 
 const ContactSection = () => {
   const { t } = useLanguage();
   const phoneNumber = "0517779778";
+  const instagramUrl = "https://www.instagram.com/zuma.baku/";
   
-  // Generic location - easily changeable
+  // Location - Baku, Azerbaijan
   const location = {
-    address: "123 Party Street, Entertainment District",
-    lat: "-26.2041",
-    lng: "28.0473",
+    address: "Baku, Azerbaijan",
+    lat: "40.3736650",
+    lng: "49.8455310",
     placeId: "ChIJd8BlQ2A" // Placeholder
   };
 
@@ -167,6 +173,18 @@ const ContactSection = () => {
             <a href={boltUrl} target="_blank" rel="noopener noreferrer">
               <BoltLogo className="mr-2 w-4 h-4 sm:w-5 sm:h-5" />
               {t.contact.bolt}
+            </a>
+          </Button>
+          
+          <Button 
+            variant="glass" 
+            size="lg"
+            className="flex-1 sm:flex-initial text-sm sm:text-base"
+            asChild
+          >
+            <a href={instagramUrl} target="_blank" rel="noopener noreferrer">
+              <Instagram className="mr-2 w-4 h-4 sm:w-5 sm:h-5" />
+              {t.contact.instagram}
             </a>
           </Button>
         </motion.div>
