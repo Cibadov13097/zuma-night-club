@@ -6,7 +6,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 const ReservationSection = () => {
   const { t } = useLanguage();
   const phoneNumber = "0517779778";
-  const whatsappNumber = "27517779778"; // International format for WhatsApp
+  const whatsappNumber = "994517779778"; // International format for WhatsApp (+994 51 777 9778)
 
   return (
     <section id="reservation" className="relative py-12 sm:py-16 md:py-24 px-4 overflow-hidden">
