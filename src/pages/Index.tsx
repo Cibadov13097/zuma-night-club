@@ -25,8 +25,8 @@ const Index = () => {
         <meta property="og:title" content={t.meta.title} />
         <meta property="og:description" content={t.meta.description} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://zumaa.netlify.app/" />
-        <meta property="og:image" content={`https://zumaa.netlify.app/logo.png`} />
+        <meta property="og:url" content="https://zumanightclub.az/" />
+        <meta property="og:image" content={`https://zumanightclub.az/logo.png`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Zuma Night Club Logo" />
@@ -35,14 +35,15 @@ const Index = () => {
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://zumanightclub.az/" />
         <meta name="twitter:title" content={t.meta.title} />
         <meta name="twitter:description" content={t.meta.description} />
-        <meta name="twitter:image" content={`https://zumaa.netlify.app/logo.png`} />
+        <meta name="twitter:image" content={`https://zumanightclub.az/logo.png`} />
         <meta name="twitter:image:alt" content="Zuma Night Club Logo" />
         <meta name="twitter:site" content="@zuma.baku" />
         
         {/* Canonical */}
-        <link rel="canonical" href="https://zumaa.netlify.app/" />
+        <link rel="canonical" href="https://zumanightclub.az/" />
       </Helmet>
       
       <main className="min-h-screen bg-background" style={{ backgroundColor: 'hsl(var(--background))' }}>

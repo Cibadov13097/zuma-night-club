@@ -22,6 +22,13 @@ const getBasename = () => {
   if (typeof window !== 'undefined') {
     const hostname = window.location.hostname;
     
+    // Custom domain detection (zumanightclub.az, etc.) - always use root
+    if (!hostname.includes('netlify.app') && 
+        !hostname.includes('vercel.app') && 
+        !hostname.includes('github.io')) {
+      return "/";
+    }
+    
     // Netlify detection
     if (hostname.includes('netlify.app') || hostname.includes('netlify.com')) {
       return "/";
