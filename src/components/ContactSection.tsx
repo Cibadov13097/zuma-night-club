@@ -10,23 +10,12 @@ const TikTokLogo = ({ className }: { className?: string }) => (
   </svg>
 );
 import wazeLogo from "@/assets/waze_app_icon-logo_brandlogos.net_l82da.png";
-import boltLogo from "@/assets/Bolt_logo.svg.png";
 
 // Waze Logo Component - Using real logo image
 const WazeLogo = ({ className }: { className?: string }) => (
   <img 
     src={wazeLogo} 
     alt="Waze" 
-    className={className}
-    style={{ objectFit: 'contain' }}
-  />
-);
-
-// Bolt Logo Component - Using real logo image
-const BoltLogo = ({ className }: { className?: string }) => (
-  <img 
-    src={boltLogo} 
-    alt="Bolt" 
     className={className}
     style={{ objectFit: 'contain' }}
   />
@@ -48,7 +37,6 @@ const ContactSection = () => {
 
   const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${location.lat},${location.lng}`;
   const wazeUrl = `https://waze.com/ul?ll=${location.lat},${location.lng}&navigate=yes`;
-  const boltUrl = `https://m.bolt.eu/pickup/${location.lat},${location.lng}`;
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -169,18 +157,6 @@ const ContactSection = () => {
             <a href={wazeUrl} target="_blank" rel="noopener noreferrer">
               <WazeLogo className="mr-2 w-4 h-4 sm:w-5 sm:h-5" />
               {t.contact.waze}
-            </a>
-          </Button>
-          
-          <Button 
-            variant="glass" 
-            size="lg"
-            className="flex-1 sm:flex-initial text-sm sm:text-base"
-            asChild
-          >
-            <a href={boltUrl} target="_blank" rel="noopener noreferrer">
-              <BoltLogo className="mr-2 w-4 h-4 sm:w-5 sm:h-5" />
-              {t.contact.bolt}
             </a>
           </Button>
           
