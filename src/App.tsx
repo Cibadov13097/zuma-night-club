@@ -9,27 +9,38 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-// Base path - Vercel uses "/", GitHub Pages uses "/zuma-night-club"
-// Check if we're on Vercel (no base path needed) or GitHub Pages
+// Base path - Vercel/Netlify uses "/", GitHub Pages uses "/zuma-night-club"
+// Check deployment platform and set appropriate base path
 const getBasename = () => {
   // If VITE_BASE_PATH is set, use it (without trailing slash for React Router)
   if (import.meta.env.VITE_BASE_PATH) {
     const base = import.meta.env.VITE_BASE_PATH;
     return base.endsWith('/') ? base.slice(0, -1) : base;
   }
-  // Vercel automatically sets VERCEL=1, but in browser we check window.location
-  // For Vercel deployments, base path should be "/"
-  // For GitHub Pages, check if URL contains the repo name
+  
+  // Check deployment platform in browser
   if (typeof window !== 'undefined') {
-    const isGitHubPages = window.location.hostname.includes('github.io');
-    if (isGitHubPages) {
-      // Extract repo name from pathname
+    const hostname = window.location.hostname;
+    
+    // Netlify detection
+    if (hostname.includes('netlify.app') || hostname.includes('netlify.com')) {
+      return "/";
+    }
+    
+    // Vercel detection
+    if (hostname.includes('vercel.app')) {
+      return "/";
+    }
+    
+    // GitHub Pages detection
+    if (hostname.includes('github.io')) {
       const pathMatch = window.location.pathname.match(/^\/([^\/]+)/);
       if (pathMatch && pathMatch[1] !== '') {
         return `/${pathMatch[1]}`;
       }
     }
   }
+  
   // Default: GitHub Pages in production, root in development
   return import.meta.env.PROD ? "/zuma-night-club" : "/";
 };

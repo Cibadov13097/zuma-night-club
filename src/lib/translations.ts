@@ -31,9 +31,9 @@ export const translations = {
       followUs: 'Bizi izləyin',
     },
     meta: {
-      title: 'Zuma Night Club - Premium Gecə Həyatı Təcrübəsi',
-      description: 'Zuma Night Club-da ən yaxşı gecə həyatını yaşayın. Musiqi, enerji və unudulmaz gecələr. VIP masanızı indi rezerv edin.',
-      keywords: 'gecə klubu, klub, gecə həyatı, VIP, musiqi, partiya, əyləncə',
+      title: 'Zuma Night Club - Premium Gecə Həyatı Təcrübəsi | Bakı',
+      description: 'Bakıda Zuma Night Club-da ən yaxşı gecə həyatını yaşayın. Musiqi, enerji və unudulmaz gecələr. VIP masanızı indi rezerv edin. Zəng: 051 777 9778',
+      keywords: 'zuma night club, bakı gecə klubu, azərbaycan gecə həyatı, vip klub bakı, gecə klubu bakı, partiya bakı, musiqi klub bakı, nightclub baku, azerbaijan nightlife',
     },
   },
   en: {
@@ -66,9 +66,9 @@ export const translations = {
       followUs: 'Follow Us',
     },
     meta: {
-      title: 'Zuma Night Club - Premium Nightlife Experience',
-      description: 'Experience the ultimate nightlife at Zuma Night Club. Music, energy, and unforgettable nights. Reserve your VIP table now.',
-      keywords: 'nightclub, club, nightlife, VIP, music, party, entertainment',
+      title: 'Zuma Night Club - Premium Nightlife Experience | Baku',
+      description: 'Experience the ultimate nightlife at Zuma Night Club in Baku, Azerbaijan. Music, energy, and unforgettable nights. Reserve your VIP table now. Call 051 777 9778',
+      keywords: 'zuma night club, baku nightclub, azerbaijan nightlife, vip club baku, nightclub baku, party baku, music club baku, nightclub, club, nightlife, VIP, music, party, entertainment',
     },
   },
 };

@@ -9,4 +9,7 @@
 
 [build.environment]
   VITE_BASE_PATH = "/"
+  NODE_ENV = "production"
+
+
 
