@@ -1,6 +1,11 @@
 [build]
-  command = "npm run build"
+  command = "npm install && npm run build"
   publish = "dist"
+
+[build.environment]
+  VITE_BASE_PATH = "/"
+  NODE_ENV = "production"
+  NODE_VERSION = "20"
 
 [[redirects]]
   from = "/*"
