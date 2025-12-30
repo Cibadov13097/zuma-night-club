@@ -25,6 +25,7 @@ export const translations = {
       waze: 'Waze-də aç',
       bolt: 'Bolt-da aç',
       instagram: 'Instagram',
+      tiktok: 'TikTok',
     },
     footer: {
       copyright: 'Bütün Hüquqlar Qorunur',
@@ -60,6 +61,7 @@ export const translations = {
       waze: 'Open in Waze',
       bolt: 'Open in Bolt',
       instagram: 'Instagram',
+      tiktok: 'TikTok',
     },
     footer: {
       copyright: 'All Rights Reserved',
