@@ -78,8 +78,13 @@ const Footer = () => {
           </motion.div>
           
           {/* Copyright */}
-          <p className="text-muted-foreground text-xs sm:text-sm tracking-wider px-4 break-words">
+          <p className="text-muted-foreground text-xs sm:text-sm tracking-wider px-4 break-words mb-2">
             Zuma Night Club — {t.footer.copyright} © {currentYear}
+          </p>
+          
+          {/* Made by */}
+          <p className="text-muted-foreground/70 text-xs tracking-wider px-4">
+            {t.footer.madeBy}
           </p>
         </motion.div>
       </div>

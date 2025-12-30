@@ -30,6 +30,7 @@ export const translations = {
     footer: {
       copyright: 'Bütün Hüquqlar Qorunur',
       followUs: 'Bizi izləyin',
+      madeBy: 'GN digital tərəfindən hazırlanıb',
     },
     meta: {
       title: 'Zuma Night Club - Premium Gecə Həyatı Təcrübəsi | Bakı',
@@ -66,6 +67,7 @@ export const translations = {
     footer: {
       copyright: 'All Rights Reserved',
       followUs: 'Follow Us',
+      madeBy: 'Made by GN digital',
     },
     meta: {
       title: 'Zuma Night Club - Premium Nightlife Experience | Baku',
